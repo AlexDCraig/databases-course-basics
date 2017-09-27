@@ -13,7 +13,11 @@
 	<input type="password" name="password" />Password</br/>
 	<input type="submit" value="Submit">
 </form>	
-</div>
+
+<br>
+<a href="http://web.engr.oregonstate.edu/~hoffera/cs340/HW1/signup.php">Sign Up</a>
+<br>
+<a href="http://web.engr.oregonstate.edu/~hoffera/cs340/HW1/listusers.php">List Users</a>
 
 <?php
 	include 'connectvarsEECS.php';

@@ -48,7 +48,7 @@
 
 	if ($checkForPWNum == 1)
 	{
-		$query = "INSERT INTO Users (username, firstName, lastName, email, password, age, salt) VALUES ('$username', '$firstName', '$lastName', '$email', MD5('$password'), '$age', '$salt')";
+		$query = "INSERT INTO Users (username, firstName, lastName, email, password, age) VALUES ('$username', '$firstName', '$lastName', '$email', MD5('$password'), '$age')";
 
 		if (mysqli_query($conn, $query)) {
 			echo "Record added.";

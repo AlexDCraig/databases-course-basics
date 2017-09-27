@@ -48,4 +48,7 @@
 </body>
 <a href="http://web.engr.oregonstate.edu/~hoffera/cs340/HW1/signup.php">Return to Sign up page.</a>
 <br>
+<br>
+<a href="http://web.engr.oregonstate.edu/~hoffera/cs340/HW1/login.php">Log in</a>
+<br><br>
 </html>
