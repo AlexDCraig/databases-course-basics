@@ -84,5 +84,7 @@
 <br>
 <br>
 <a href="http://web.engr.oregonstate.edu/~hoffera/cs340/HW1/signup.php">Return to Sign up page.</a>
+<br>
+<br>
 <a href="http://web.engr.oregonstate.edu/~hoffera/cs340/HW1/listusers.php">Go to List Users page.</a>
 </html>
