@@ -46,16 +46,9 @@
 			$checkForPWNum = 1;
 	}	
 
-	function generateRandomSalt() {
-		return base64_encode(mcrypt_create_iv(12, MCRYPT_DEV_URANDOM));
-	}
-
-	// Attempt insert query.
-	$salt = generateRandomSalt();
-
 	if ($checkForPWNum == 1)
 	{
-		$query = "INSERT INTO Users (username, firstName, lastName, email, password, age, salt) VALUES ('$username', '$firstName', '$lastName', '$email', '$password$salt', '$age', '$salt')";
+		$query = "INSERT INTO Users (username, firstName, lastName, email, password, age, salt) VALUES ('$username', '$firstName', '$lastName', '$email', MD5('$password'), '$age', '$salt')";
 
 		if (mysqli_query($conn, $query)) {
 			echo "Record added.";

@@ -21,39 +21,12 @@
 	if ($password == NULL)
 		exit("No password provided");
 
-	$query = "SELECT * FROM Users WHERE username='$username'";
-	$result = mysqli_query($conn, $query);
-
-
-	if ($result && mysqli_num_rows($result)>0)
-	{
-		// Grab row.
-		while ($row = mysqli_fetch_assoc($result))
-		{
-			// Loop thru each name/value pair.
-			foreach ($row as $cname => $cvalue) 
-			{
-				if (strcmp($cname, "password") == 0)
-				{
-					$passWithSalt = $cvalue;
-				}
-
-				else if (strcmp($cname, "salt") == 0)
-				{
-					$salt = $cvalue;
-				}
-			}
-		}
-
-		$userPassWithSalt = $password . $salt;
-		
-		if (strcmp($userPassWithSalt, $passWithSalt) == 0)
-			echo "Successfully logged in.";
-
-		else
-			echo "Username/password combination not found.";
-	} 
-
+	$sql = "SELECT * FROM Users WHERE username='$username' AND password=MD5('$password')";
+	$result = mysqli_query($conn, $sql);
+	
+	if($row = mysqli_fetch_assoc($result))
+		echo "Successfully logged in.";
+	
 	else
 		echo "Username/password combination not found.";
 	
